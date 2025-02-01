@@ -1,0 +1,50 @@
+Polimorfismo
+las funciones virtuales son la base del polimorfismo de inclusiòn, su comportamiento
+al ser declarado virtual es que se puede sobreescribir en la clase hija.
+Si la funciòn en cuestion es designada virtual, se le llamara a la funciòn de la clase hija
+(derivada(si existe)), si no, a la de la clase padre.
+
+Clase abstracta: es una clase que no se puede crear objetos de ella, pero si de sus clases derivadas, al 
+menos tiene una funcion virtual pura. Las funciones virtuales puras son aquellas que siempre se definiran en la clase derivada, 
+de modo que no sera necesario definirlas en la clase base. Los metodos virtuales puros son aquellos 
+metodos que no estan implementados en la clase base, pero si en la clase derivada.
+
+Reglas:
+No esta permitido crear objetos de una clase abstracta
+Siempre hay que definir todas las funciones virtuales puras de una clase abstracta en sus clases derivadas, no hacerlo 
+asì implica que la nueva clase derivada serà tambien abstracta.
+
+Sintaxis funciones virtuales puras:
+virtual tipo nombre(parametros) = 0;
+
+Interfaces 
+Es una clase abstracta que solo tiene funciones virtuales puras, no tiene atributos.
+
+
+//cuando aparecen funciones polimorficas, es polimorfismo de inclusión, y cuando esta con base tipos polimorifcos, es polimrfismo paramétrico.
+
+//Tipos de polimorfismo
+//Polimorfismo de sobrecarga: Misma función con diferentes parámetros (tiempo de compilacion)
+//Polimorfismo paramétrico: Tambien llamado dolimorfismo ede plantillas (tiempo de compilacion)
+//Polmorfismo de inclusión: Herencia de clase, tambien llamado redefinición o inclusión (tiempo de ejecucion)
+
+
+// 1. Tener clases con relaciones de herencia
+// 2. Tener un arreglo de apuntadores de clases
+// 3. Al menos debe existir un metodo virtual en el padre
+//4. Necesitan cohercionar los elementos del arreglo, instanciando objeectos de cada clase.
+
+//el polimorfismo se puede ver de dos formas: en tiempo de compilacion (polimorfismo de funciones y parametricoco u operadores) y en tiempo de ejecucion (polimorfismo de inclusión).
+
+Plantillas - Polimorfismo parametrico
+Generar más funciones con diferentes tipos de datos con base en una funcion
+Es apropiado para definir contenedores, estructuras pars almacenar una colección de objetos
+
+template <classT>
+
+void Swap(T &a, T &b){
+    T aux;
+    aux = a;
+    a = b;
+    b = aux;
+}

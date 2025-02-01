@@ -1,0 +1,130 @@
+:root{
+    --logo:#9303F6;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:#fff;
+    font-family:'Arges';
+    font-weight: bolder;
+}
+body {
+    background: #000;
+}
+
+.contenedor{
+    width: 90%;
+    margin: auto;
+    
+}
+.videoCompleto{
+    display: none;
+}
+.videoCompleto.activo, video{
+    overflow: hidden;
+    display: grid;
+    width: 100%;
+    height: auto;
+}
+nav{
+    padding: 10px 0;
+    z-index: 2000;
+}
+
+.menu .categorias{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu .categorias .logo{
+    color: var(--logo);
+    text-transform: uppercase;
+    font-size: 65px; 
+    padding: 0 80px;
+    
+} 
+
+.menu .categorias .logo:hover{
+    color: #ad3df8;
+} 
+
+.menu .categorias .contenedor-categorias{
+padding: 20px;
+}
+
+ .menu .categorias .contenedor-categorias a,i{
+    color: #aaa;
+    text-decoration: none;
+    margin-right: 25px;
+    font-family: 'PPMori-Extralight';
+}
+
+ .menu .categorias .contenedor-categorias a:hover,i:hover,
+ .menu .categorias .contenedor-categorias a.active{
+    color: #fff;
+}
+
+
+/* *estilos subcategorias */
+.menu .grid {
+    position: relative;
+}
+.menu .grid .grid-subcategorias{
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    width: 140px;
+    height: 150px;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, .92);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .1);
+    display: none;
+    grid-template-columns: repeat(1, 1fr);
+    border-radius: 4px;
+    transition: .4s ease all;   
+}
+
+.menu .grid .grid-subcategorias.activo{
+    display: grid;
+}
+.menu .grid .grid-subcategorias a{ 
+margin: 0 20px;
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'PPMori-Extralight';
+    display: flex;
+    color: #aaa;
+    justify-content: space-between;
+}
+.menu .grid .grid-subcategorias a:hover{
+    color: #fff;
+}
+
+ /* * boton finalizar */
+ .finalizar button{
+    display: none;
+}
+
+.finalizar.activo button{
+    display: grid;
+    position: absolute;
+    z-index: 20000;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.7em 1.6em;
+    right: 1.25em;
+    bottom: -600px;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.finalizar.activo button:hover{
+    background: rgb(0, 0, 0, 0.5);
+    color: #fff;
+}
