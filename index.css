@@ -1,6 +1,9 @@
 :root{
     --logo:#9303F6;
 }
+:root{
+    --logo:#9303F6;
+}
 
 *{
     margin: 0;
@@ -328,28 +331,87 @@ margin: 0 20px;
 }
 
 /* ? Media Queries */
-@media screen and (max-width: 800px){
-    nav .logo{
-        margin-bottom: 10px;
-        font-size: 60px;
+@media screen and (max-width: 768px){
+    .menu{
+        width: 100vw;
+        display: flex;
+        padding: 10px auto;
+    }
+    .categorias{
+        width: 100%;
+    }
+    .menu .categorias .logo{
+        width: auto;
+        padding: 0 30px ;
+        margin: auto 0;
+        white-space: nowrap;
+        font-size: 2rem;
+    }
+    .contenedor-categorias{
+        width: 80%;
+        margin: auto 0;
+        font-size: .4rem;
+        display: flex;
+        justify-content: space-around;
+    }
+    .contenedor-categorias a{
+        white-space: nowrap;
+        width: 100%;
+    }
+    .menu .categorias{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    nav {
+
+    .container {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+    }
+    .contenedor{
+        width: 100vw;
+        height: 500px;
+        font-size: 14px;
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+        margin: 0;
+
+    }
+    .contenedor video{
+        height: 400px;
+    }
+    .content{
+        top: 100px;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
     }
-
-    .contenedor{
-        font-size: 14px;
+    .content .boton{
+        width: 60%;
+        border-radius: 50px;
     }
-
-
+    .content .titulo{
+        font-size: 3rem;
+        color: #fff;
+    }
     .principal .contenedor .content .descripcion  {
         max-width: 90%;
     }
 
     .contenedor-principal .contenedor-carrusel{
-
+        margin: 50px auto;
         overflow: visible;
     }
     .contenedor-principal .contenedor-carrusel .carrusel{
@@ -359,12 +421,474 @@ margin: 0 20px;
         gap:20px;
     }
     .contenedor-principal .contenedor-carrusel .carrusel .artista{
+
         background: none;
+    }
+    .artistas-recomendados{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: auto;
+        margin-top: 300px;
     }
 
     .artistas-recomendados .contenedor-carrusel .carrusel img {
+        border-radius: 20px;
         background:none;
-        width: 143px;
+        width: 100px;
+        height: 89px;
+    }
+    .artistas-recomendados .indicadores,
+    .artistas-recomendados .flecha-derecha,
+    .artistas-recomendados .flecha-izquierda{
+        display: none;
+    }
+}
+
+/* 
+.carrusel{
+    min-height: 30.62em;
+    background-image: linear-gradient(180deg,#000 40%,var(--logo));
+    background-size: 500%;
+}
+     */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:#fff;
+    font-family:'Arges';
+    font-weight: bolder;
+}
+body {
+    background: #000;
+}
+
+.contenedor{
+    width: 90%;
+    margin: auto;
+    
+}
+.videoCompleto{
+    display: none;
+}
+.videoCompleto.activo, video{
+    display: grid;
+    width: 100%;
+    height: 90%;
+}
+nav{
+    padding: 10px 0;
+}
+
+.menu .categorias{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu .categorias .logo{
+    color: var(--logo);
+    text-transform: uppercase;
+    font-size: 65px; 
+    padding: 0 80px;
+    cursor: pointer;
+    text-decoration: none;
+    
+} 
+
+.menu .categorias .logo:hover{
+    color: #ad3df8;
+} 
+
+.menu .categorias .contenedor-categorias{
+padding: 20px;
+}
+
+ .menu .categorias .contenedor-categorias a,i{
+    color: #aaa;
+    text-decoration: none;
+    margin-right: 25px;
+    font-family: 'PPMori-Extralight';
+}
+
+ .menu .categorias .contenedor-categorias a:hover,i:hover,
+ .menu .categorias .contenedor-categorias a.active{
+    color: #fff;
+}
+
+
+/* *estilos subcategorias */
+.menu .grid {
+    position: relative;
+}
+.menu .grid .grid-subcategorias{
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    width: 140px;
+    height: 150px;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, .92);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .1);
+    display: none;
+    grid-template-columns: repeat(1, 1fr);
+    border-radius: 4px;
+    transition: .4s ease all;   
+}
+
+.menu .grid .grid-subcategorias.activo{
+    display: grid;
+}
+.menu .grid .grid-subcategorias a{ 
+margin: 0 20px;
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'PPMori-Extralight';
+    display: flex;
+    color: #aaa;
+    justify-content: space-between;
+}
+.menu .grid .grid-subcategorias a:hover{
+    color: #fff;
+}
+
+/* *contenedor principal  */
+.principal.inactivo{
+    display: none;
+}
+.principal .contenedor{
+    display: grid;
+    margin-bottom: 6.25em;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#video-fondo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+    background-color: linear-gradient(90deg,rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+
+}
+.oscurecer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0.9)10%, rgba(0, 0, 0, 0));
+}
+
+.content{
+    position: absolute;
+    top: 22%;
+    left: 8%;
+    width: 100%;
+    height: 70%;
+    text-align: left;
+    background: none;
+}
+.principal .contenedor .titulo{
+    background: none;
+    text-transform: uppercase;
+    font-size: 115px;
+    font-family: "Bebas Neue", sans-serif;
+
+}
+
+.principal .contenedor .descripcion {
+    background: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    font-size: .9em;
+    line-height: 1.5em;
+    max-width: 35%;
+    margin-bottom: 1.25em;
+    
+}
+.principal .boton{
+    background: rgb(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #fff;
+    margin-right: 1.25em;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+    font-family: "Bebas Neue", sans-serif;
+
+}
+
+.principal .boton:hover{
+    background: #fff;
+    color: #000;
+}
+.principal .boton i{
+    background: none;
+    margin-right: 1.25em;
+}
+.principal .boton:hover i{
+    color: #000; 
+}
+
+/* Contenedor titulo y controles */
+.contenedor-titulo-controles{
+    background: none;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.contenedor-titulo-controles h3{
+    background: none;
+    margin-left: 3.5%;
+    color:#fff ;
+    font-size: 19px;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    font-weight:bold;
+}
+
+.contenedor-titulo-controles .indicadores{
+    background: none;
+}
+
+.contenedor-titulo-controles .indicadores button{
+    background: #fff;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 3px;
+}
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo{
+    background: var(--logo);
+}
+
+/*  * Recomendados y flechas  */
+
+.artistas-recomendados.inactivo{
+    display: none;
+}
+.artistas-recomendados{
+    position: relative;
+    top: -42%;
+    margin-bottom:70px;
+    background: none;
+}
+.artistas-recomendados .contenedor-principal{
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: none;
+}
+
+.artistas-recomendados .contenedor-principal .flecha-izquierda,
+.artistas-recomendados .contenedor-principal .flecha-derecha{
+    position: absolute;
+    border:none;
+    background:rgb(0, 0, 0,.5);
+    font-size: 40px;
+    height: 40%;
+    top: calc(50%-25%);
+    line-height: 40px;
+    width: 40px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+    
+}
+.artistas-recomendados .contenedor-principal .flecha-izquierda:hover,
+.artistas-recomendados .contenedor-principal .flecha-derecha:hover{
+
+    background: rgb(0, 0, 0, 0.9);
+}
+
+.artistas-recomendados .contenedor-principal .flecha-izquierda{
+    left: 0;
+}
+.artistas-recomendados .contenedor-principal .flecha-derecha{
+    right: 0;
+}
+.artistas-recomendados .contenedor-principal i{
+    background: none;
+}
+
+/** Carrusel */
+.artistas-recomendados .contenedor-carrusel{
+    background: none;
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+
+}
+.artistas-recomendados .contenedor-carrusel .carrusel{ 
+    display: flex;
+    flex-wrap: nowrap;
+}
+.artistas-recomendados .contenedor-carrusel .carrusel .artista{ 
+    min-width: 25%;
+    transition: .3s ease all;
+}
+.artistas-recomendados .contenedor-carrusel .carrusel .artista.hover{
+    transform: scale(1.15);
+    transform-origin: center;
+}
+.artistas-recomendados .contenedor-carrusel .carrusel img {
+    width: 300px;
+    height: 100%; 
+    object-fit: cover;
+  }
+
+  /* * boton finalizar */
+.finalizar button{
+    display: none;
+}
+
+.finalizar.activo button{
+    display: grid;
+    position: absolute;
+    z-index: 20000;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.7em 1.6em;
+    right: 1.25em;
+    bottom: -160px;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.finalizar.activo button:hover{
+    background: rgb(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+/* ? Media Queries */
+@media screen and (max-width: 768px){
+    .menu{
+        width: 100vw;
+        display: flex;
+        padding: 10px auto;
+    }
+    .categorias{
+        width: 100%;
+    }
+    .menu .categorias .logo{
+        width: auto;
+        padding: 0 30px ;
+        margin: auto 0;
+        white-space: nowrap;
+        font-size: 2rem;
+    }
+    .contenedor-categorias{
+        width: 80%;
+        margin: auto 0;
+        font-size: .4rem;
+        display: flex;
+        justify-content: space-around;
+    }
+    .contenedor-categorias a{
+        white-space: nowrap;
+        width: 100%;
+    }
+    .menu .categorias{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .container {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+    }
+    .contenedor{
+        width: 100vw;
+        height: 500px;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+        margin: 0;
+
+    }
+    .contenedor video{
+        height: 400px;
+    }
+    .content{
+        top: 100px;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .content .boton{
+        width: 60%;
+        border-radius: 50px;
+    }
+    .content .titulo{
+        font-size: 3rem;
+        color: #fff;
+    }
+    .principal .contenedor .content .descripcion  {
+        max-width: 90%;
+    }
+
+    .contenedor-principal .contenedor-carrusel{
+        margin: 50px auto;
+        overflow: visible;
+    }
+    .contenedor-principal .contenedor-carrusel .carrusel{
+        background: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) ;
+        gap:20px;
+    }
+    .contenedor-principal .contenedor-carrusel .carrusel .artista{
+
+        background: none;
+    }
+    .artistas-recomendados{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: auto;
+        margin-top: 300px;
+    }
+
+    .artistas-recomendados .contenedor-carrusel .carrusel img {
+        border-radius: 20px;
+        background:none;
+        width: 100px;
         height: 89px;
     }
     .artistas-recomendados .indicadores,

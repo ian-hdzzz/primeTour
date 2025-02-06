@@ -25,7 +25,9 @@ nav{
     font-family:'Arges';
     font-weight: bolder;
 }
-
+.contenedor-principal .titulo{
+    text-align: center;
+}
 .menu .categorias{
     display: flex;
     justify-content: space-between;

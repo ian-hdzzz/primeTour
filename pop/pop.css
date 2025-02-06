@@ -24,7 +24,9 @@ nav{
     padding: 10px 0;
     background: #000;
 }
-
+.contenedor-principal .titulo{
+    text-align: center;
+}
 .menu .categorias{
     display: flex;
     justify-content: space-between;
