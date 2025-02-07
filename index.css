@@ -343,8 +343,10 @@ margin: 0 20px;
         display: flex;
         padding: 10px 0;
     }
-    .categorias{
+    .menu .categorias{
         width: 100%;
+        display: flex;
+        
     }
     .categorias a{
         width: 100%;
@@ -353,27 +355,32 @@ margin: 0 20px;
         margin: 0;
     }
     .menu .categorias .logo{
+        color: #9303F6;
         width: auto;
-        padding: 0 30px ;
-        margin: auto 0;
+        padding: 0 20px;
+        margin: 0;
         white-space: nowrap;
         font-size: 2rem;
     }
-    .contenedor-categorias{
-        width: 50%;
-        margin: auto 0;
+    .menu .categorias .contenedor-categorias{
+        width: 100%;
         font-size: .4rem;
         display: flex;
-        justify-content: space-around;
-        gap: 0;
+        justify-content: space-evenly;
+      margin: 0;
+
+
     }
     .contenedor-categorias a{
         font-family: "Open Sans", sans-serif;
         white-space: nowrap;
-        width: 140%;
-        margin: 0;
-        padding: 0;
+        width: 50%;
+
     }
+
+ .menu .categorias .contenedor-categorias a,i{
+    margin-right: 8px;
+ }
     .menu .categorias{
         display: flex;
         justify-content: space-between;
