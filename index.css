@@ -45,6 +45,7 @@ nav{
     align-items: center;
 }
 .menu .categorias .logo{
+    font-family: "Bebas Neue", sans-serif;
     color: var(--logo);
     text-transform: uppercase;
     font-size: 65px; 
@@ -66,7 +67,7 @@ padding: 20px;
     color: #aaa;
     text-decoration: none;
     margin-right: 25px;
-    font-family: 'PPMori-Extralight';
+    font-family: "Open Sans", sans-serif;
 }
 
  .menu .categorias .contenedor-categorias a:hover,i:hover,
@@ -101,7 +102,7 @@ padding: 20px;
 margin: 0 20px;
     padding: 10px;
     text-decoration: none;
-    font-family: 'PPMori-Extralight';
+    font-family: "Bebas Neue", sans-serif;
     display: flex;
     color: #aaa;
     justify-content: space-between;
@@ -352,7 +353,6 @@ margin: 0 20px;
         margin: 0;
     }
     .menu .categorias .logo{
-        color: #fff;
         width: auto;
         padding: 0 30px ;
         margin: auto 0;
@@ -368,8 +368,9 @@ margin: 0 20px;
         gap: 0;
     }
     .contenedor-categorias a{
+        font-family: "Open Sans", sans-serif;
         white-space: nowrap;
-        width: 100%;
+        width: 140%;
         margin: 0;
         padding: 0;
     }
